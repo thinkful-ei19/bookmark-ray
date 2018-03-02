@@ -4,8 +4,8 @@
 
 $(document).ready(function() {
     bookmark.bindEventListeners();
-    api.getItems((items) => {
-        items.forEach((item) => store.addItem(item));
+    api.getBookmarks((bookmarks) => {
+        bookmarks.forEach((bookmark) => store.addBookmark(bookmark));
         bookmark.render();
     });
 });

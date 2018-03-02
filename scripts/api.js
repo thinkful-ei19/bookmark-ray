@@ -34,13 +34,10 @@ const api = (function() {
             success: callback
         });
     }
-
-
     return {
         getBookmarks,
         createBookmark,
         updateBookmark,
         deleteBookmark
     };
-
 }());
