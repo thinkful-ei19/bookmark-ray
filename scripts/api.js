@@ -3,7 +3,7 @@
 const api = (function() {
     const BASE_URL = 'https://thinkful-list-api.herokuapp.com/ray';
     const getBookmarks = function(callback) {
-        $.getJSON($`${BASE_URL}/bookmarks`, callbakc);
+        $.getJSON($`${BASE_URL}/bookmarks`, callback);
     };
     const createBookmark = function(title, callback) {
         let newBookmark = JSON.stringify({title: title});
