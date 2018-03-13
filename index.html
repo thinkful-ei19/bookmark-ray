@@ -1,59 +1,62 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Boookmarks Application</title>
+    <title>Bookmark App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-    <div class="add-div hidden">
-        <h2>Add new bookmark</h2>
-        <form id="add-bookmark-form">
-            <label for="title">Title</label>
-            <input id="title" name="title" type="text">
-            <label for="link">URL Link</label>
-            <input id="link" name="link" type="text">
-            <label id="rating" for="rating">Rating</label>
-                <select id="form-rating">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            <label for="description">Description</label>
-            <textarea id="description" class="add-description" name="description" type="text"></textarea>
-            <button class="submit-button" type="submit">Submit</button>
+    <div class="container">
+        <h1>Bookmark App</h1>
+        <form id="js-bookmark-list-form">
+            <div class="add-box">
+            <input type="checkbox" id="add-checked" class="add-checked js-add-checked" />
+            <label for="add-checked">Add Bookmark</label>
+            </div>
+            <div class ="rating-filter">
+            <label for="rating-drop-down">Filter by Rating</label>
+            <select id="rating-drop-down"> 
+                <option value="rating2" selected>Rating 1</option>
+                <option value="rating1">Rating 2</option> 
+                <option value="rating3">Rating 3</option>
+                <option value="rating3">Rating 4</option>
+                <option value="rating3">Rating 5</option>
+            </select>
+            </div>
+        </form>  
+        <form class="js-add-toggle hidden">
+            <div>        
+            <label for="bookmark-list-entry">Title</label>
+            <input type="text" name="bookmark-list-entry" class="js-bookmark-list-entry" placeholder="E.g., Google">
+            <br>
+            <label for="url-box">URL</label>
+            <input type="text" name="url-box" id="url-box" placeholder="Start with http://">
+            <button id="new-bookmark-submit" type="submit">Submit</button>
+            <br>
+            <label for="description-box">Description</label>
+            <input type="text" name="description-box" id="description-box" placeholder="add description">
+            <br>
+            <label for="new-rating-drop-down">Rating</label>
+            <select id="new-rating-drop-down" name="rating-drop-down"> 
+                <option value="1" selected>Rating 1</option>
+                <option value="2">Rating 2</option> 
+                <option value="3">Rating 3</option>
+                <option value="4">Rating 4</option>
+                <option value="5">Rating 5</option>
+            </select>
+            </div>
         </form>
-    </div>
-    <div class="default">
-        <div class="default-container">
-            <h1>Bookmark App</h1>
-                <div class="controls">
-                    <button class="display-add-bookmark">Add bookmark</button>
-                    <span id="filter-by-rating-span">Filter by rating:
-                        <select id="filter-by-rating">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </span>
-                </div>
-                <ul class="results">
-                </ul>
-        </div>
-    </div>
+        <ul class="bookmark-list js-bookmark-list">
+        </ul>
+    </div> 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="scripts/store.js"></script>
-    <script type="text/javascript" src="scripts/bookmark.js"></script>
+    <script type="text/javascript" src="scripts/bookmarkapp.js"></script>
     <script type="text/javascript" src="scripts/api.js"></script>
     <script type="text/javascript" src="scripts/index.js"></script>
 </body>
