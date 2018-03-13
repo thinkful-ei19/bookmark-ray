@@ -1,12 +1,9 @@
-'use strict'
+'use strict';
 
-/* global $, bookmark, store, api */
+/* global store, api, bookmarkapp */
 
 $(document).ready(function() {
-    bookmark.bindEventListeners();
-    api.getBookmarks((bookmarks) => {
-        bookmarks.forEach((bookmark) => store.addBookmark(bookmark));
-        bookmark.render();
-    });
+  bookmarkList.bindEventListeners();
+  bookmarkList.renderBookmarkList();
 });
 
